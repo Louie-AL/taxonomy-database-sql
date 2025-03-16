@@ -1,19 +1,43 @@
-# Taxonomy Database SQL Scripts (Script Date: 3/30/2022 8:16:18 PM)
+# Comprehensive Taxonomy Database with SQL Script Date: 3/30/2022 8:16:18 PM 
 
-This repository contains SQL scripts for managing a relational database that organizes biological taxonomies.
+This repository contains SQL scripts for managing a taxonomy database with a relational structure, stored functions, and procedures. The project demonstrates advanced SQL techniques, including schema design, data manipulation, stored procedures, and transaction management.
 
 ## Features
-- **Database Schema Creation:** Defines tables for taxonomic classification (Kingdom, Phylum, Class, Order, Family, Genus, Species).
-- **Data Insertion:** Inserts taxonomic data.
-- **Queries:** Retrieves taxonomic information.
-- **Data Manipulation:** Includes scripts for updates and deletions with referential integrity.
+
+### 1. **Database Schema Creation**
+   - Defines tables for hierarchical taxonomic classification:
+     - **Kingdom**
+     - **Phylum**
+     - **Class**
+     - **Order**
+     - **Family**
+     - **Genus**
+     - **Species**
+   - Enforces **referential integrity** using foreign keys.
+
+### 2. **Data Insertion**
+   - Populates the database with sample taxonomic records.
+   - Ensures **data normalization** and consistency.
+
+### 3. **Data Retrieval Queries**
+   - Fetches taxonomic classification for specific species.
+   - Uses **SQL joins** for hierarchical data relationships.
+
+### 4. **Stored Function (`fnc_get_reino`)**
+   - Retrieves the kingdom for a given species based on its common name.
+   - Implements SQL **scalar functions**.
+
+### 5. **Stored Procedure (`sp_inserta_registro`)**
+   - Inserts new taxonomic entries while ensuring no duplicate records.
+   - Uses **transaction management** with `BEGIN TRANSACTION` and `COMMIT TRANSACTION`.
+   - Implements **ACID principles** for database consistency.
 
 ## Requirements
-- Microsoft SQL Server
+- **Microsoft SQL Server**
+- **SQL Server Management Studio (SSMS)** (recommended for execution)
 
-## Usage
-1. Run `merged_taxonomy_database.sql` to set up the database.
-2. Execute queries and data manipulation scripts as needed.
-
-## Author
-Created by **Alonso Cendra Villalobos**
+## Installation & Usage
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/<your-username>/taxonomy-database-sql-complete.git
+   cd taxonomy-database-sql-complete
